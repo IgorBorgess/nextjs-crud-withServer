@@ -2,6 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
+import Tabela from '../components/Tabela'
+import Cliente from '../core/Cliente'
+
+const clientes = [
+  new Cliente('Ana', 34, '1'),
+  new Cliente('Bernardo', 45, '2'),
+  new Cliente('Carlos', 23, '3'),
+  new Cliente('Pedro', 54, '4'),
+
+]
 
 export default function Home() {
   return (
@@ -10,7 +20,7 @@ export default function Home() {
     bg-gradient-to-r from-blue-500 to-purple-500
     text-white`}>
       <Layout titulo="Cadastro Simples">
-        <span>Conteúdo</span>
+        <Tabela clientes={clientes}></Tabela>
       </Layout>
     </div>
   )
