@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
 import Tabela from '../components/Tabela'
 import Cliente from '../core/Cliente'
+import Botao from '../components/Botao'
 
 const clientes = [
   new Cliente('Ana', 34, '1'),
@@ -29,6 +30,9 @@ export default function Home() {
     bg-gradient-to-r from-blue-500 to-purple-500
     text-white`}>
       <Layout titulo="Cadastro Simples">
+        <div className='flex justify-end'>
+        <Botao cor='green' className='mb-4'>Novo Cliente</Botao>
+        </div>
         <Tabela clientes={clientes} clienteSelecionado={clienteSelecionado}
         clienteExcluido={clienteExcluido}></Tabela>
       </Layout>
